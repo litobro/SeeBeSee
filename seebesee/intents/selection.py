@@ -13,6 +13,11 @@ def launch():
     '''
     return audio(text).play('https://cbcliveradio-lh.akamaihd.net/i/CBCR1_EDM@372985/master.m3u8')
 
+@ask.intent("AMAZON.PauseIntent")
+def stop():
+    text = "Goodbye"
+    return audio(text).stop()
+
 @ask.intent("SeeBeSeePlayIntent")
 def play_station(station, city):
     text = "Playing CBC Radio %s %s" % (station, city)
